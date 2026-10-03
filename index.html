@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Aleena! 🎂</title>
+  <meta name="description" content="A special birthday surprise made for Aleena.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Great+Vibes&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="loader">
+    <div class="loader-heart">♥</div>
+    <div class="loader-text">Preparing something special...</div>
+    <div class="loader-bar"><div class="loader-fill"></div></div>
+  </div>
+
+  <div class="particles" id="particles"></div>
+  <div class="progress" id="progress"></div>
+  <div class="nav-dots" id="navDots"></div>
+
+  <button class="music-toggle" id="musicBtn" aria-label="Toggle music">
+    <span></span><span></span><span></span><span></span>
+  </button>
+
+  <main>
+    <section class="page-section hero visible" data-section="Welcome">
+      <div class="photo-ring">
+        <img src="aleena.jpg" alt="Aleena">
+      </div>
+      <div class="badge">✨ It's a Special Day!</div>
+      <h1>Happy Birthday<br><span>Aleena!</span></h1>
+      <p class="hero-sub">Wishing you the most magical day ✨</p>
+      <button class="nav-btn primary" onclick="goToSection(1)">Begin the Journey <span>→</span></button>
+    </section>
+
+    <section class="page-section" data-section="Message">
+      <h2 class="section-title">💌 A Special Message</h2>
+      <div class="message-card">
+        <p>Dear Aleena,</p>
+        <p>On this beautiful day, I just want you to know how incredibly special you are. May your smile always stay bright, your heart stay happy, and your days be filled with beautiful little moments.</p>
+        <p>May this new year of your life bring you endless joy, love, success, and all the dreams your heart desires. You deserve every bit of happiness.</p>
+        <p>Here's to another year of laughter, adventures, memories, and reasons to smile. Keep shining and keep being wonderfully you! 💖</p>
+        <div class="signature">Forever grateful for you <span>♥</span></div>
+      </div>
+      <div class="section-nav">
+        <button class="nav-btn" onclick="goToSection(0)">← Back</button>
+        <button class="nav-btn primary" onclick="goToSection(2)">Next Cake →</button>
+      </div>
+    </section>
+
+    <section class="page-section" data-section="Cake">
+      <h2 class="section-title">🎂 Make a Wish!</h2>
+      <div class="cake-area">
+        <div class="cake" id="cake">
+          <div class="flame" id="flame">🔥</div>
+          <div class="cake-top"></div>
+          <div class="cake-body">🎂</div>
+        </div>
+        <p>Close your eyes, make a wish, and blow! ✨</p>
+        <button class="blow-btn" onclick="blowCandles()">🕯️ Blow the Candles!</button>
+      </div>
+      <div class="section-nav">
+        <button class="nav-btn" onclick="goToSection(1)">← Back</button>
+        <button class="nav-btn primary" onclick="goToSection(3)">Next Wishes →</button>
+      </div>
+    </section>
+
+    <section class="page-section" data-section="Wishes">
+      <h2 class="section-title">🎁 Birthday Wishes</h2>
+      <div class="wishes-grid">
+        <div class="wish-card"><div class="wish-icon">☀️</div><p>May your life always be colorful, peaceful, and full of beautiful surprises.</p></div>
+        <div class="wish-card"><div class="wish-icon">🏆</div><p>Wishing you success in everything you touch this year and always.</p></div>
+        <div class="wish-card"><div class="wish-icon">🦋</div><p>May you spread your wings and reach every dream you have.</p></div>
+        <div class="wish-card"><div class="wish-icon">🌸</div><p>May every new day bring you closer to the happiness you deserve.</p></div>
+        <div class="wish-card"><div class="wish-icon">😂</div><p>Here's to more laughter, more adventures, and more unforgettable moments!</p></div>
+        <div class="wish-card"><div class="wish-icon">💖</div><p>May luck, love, and happiness follow you wherever you go.</p></div>
+      </div>
+      <div class="section-nav">
+        <button class="nav-btn" onclick="goToSection(2)">← Back</button>
+        <button class="nav-btn primary" onclick="goToSection(4)">Next Celebrate →</button>
+      </div>
+    </section>
+
+    <section class="page-section" data-section="Celebrate">
+      <h2 class="section-title">🎉 Celebration Vibes</h2>
+      <div class="celebration">
+        <div class="celebrate-card">🎈</div>
+        <div class="celebrate-card">🎂</div>
+        <div class="celebrate-card">✨</div>
+        <div class="celebrate-card">💐</div>
+      </div>
+      <p class="final-message">Happy Birthday, Aleena! </p>
+      <button class="nav-btn primary" onclick="celebrate()">Celebrate! 🎉</button>
+      <div class="section-nav">
+        <button class="nav-btn" onclick="goToSection(3)">← Back</button>
+      </div>
+    </section>
+
+    <footer> <span></span> just for you<br><small>Happy Birthday Aleena! 🎂</small></footer>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>

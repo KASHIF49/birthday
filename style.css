@@ -1,0 +1,61 @@
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0f0f1a;--accent:#f472b6;--accent2:#a78bfa;--gold:#fbbf24;--text:#f1f5f9;--muted:rgba(241,245,249,.68);--glass:rgba(255,255,255,.075);--glow:rgba(244,114,182,.32)}
+html{scroll-behavior:smooth}
+body{font-family:Outfit,sans-serif;background:radial-gradient(circle at 50% 0%,#24162d 0,#0f0f1a 45%,#0a0a12 100%);color:var(--text);overflow-x:hidden}
+button{font:inherit}
+#loader{position:fixed;inset:0;z-index:9999;background:#0f0f1a;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:.6s}
+#loader.hide{opacity:0;visibility:hidden;pointer-events:none}
+.loader-heart{font-size:4rem;color:var(--accent);animation:pulse 1s infinite;text-shadow:0 0 35px var(--glow)}
+.loader-text{font-family:"Great Vibes",cursive;font-size:1.8rem;color:var(--accent);margin-top:1rem}
+.loader-bar{width:210px;height:3px;background:#ffffff18;border-radius:10px;margin-top:1.4rem;overflow:hidden}
+.loader-fill{height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2),var(--gold));animation:load 1.2s forwards}
+@keyframes load{to{width:100%}} @keyframes pulse{50%{transform:scale(1.18)}}
+.particles{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.particle{position:absolute;border-radius:50%;opacity:0;animation:float linear infinite}
+@keyframes float{0%{transform:translateY(105vh) scale(.2);opacity:0}15%,85%{opacity:.8}100%{transform:translateY(-10vh) scale(1);opacity:0}}
+.progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2),var(--gold));z-index:500}
+.nav-dots{position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:300;display:flex;flex-direction:column;gap:11px}
+.nav-dot{width:11px;height:11px;border:2px solid #ffffff44;background:transparent;border-radius:50%;cursor:pointer;padding:0;transition:.25s}
+.nav-dot.active{background:var(--accent);border-color:var(--accent);box-shadow:0 0 15px var(--glow)}
+.music-toggle{position:fixed;left:18px;top:18px;z-index:300;width:42px;height:42px;border-radius:50%;border:1px solid #ffffff22;background:var(--glass);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;gap:3px;cursor:pointer}
+.music-toggle span{display:block;width:3px;height:12px;background:var(--accent);border-radius:5px;animation:bars .8s infinite ease-in-out}
+.music-toggle span:nth-child(2){animation-delay:.15s}.music-toggle span:nth-child(3){animation-delay:.3s}.music-toggle span:nth-child(4){animation-delay:.45s}
+.music-toggle:not(.playing) span{animation-play-state:paused;height:6px}
+@keyframes bars{50%{height:19px}}
+main{position:relative;z-index:1;max-width:900px;margin:auto}
+.page-section{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:70px 28px;opacity:0;transform:translateY(35px);transition:opacity .8s,transform .8s;text-align:center}
+.page-section.visible{opacity:1;transform:translateY(0)}
+.hero{min-height:100vh}
+.photo-ring{width:210px;height:210px;border-radius:50%;padding:5px;background:linear-gradient(135deg,var(--accent),var(--accent2),var(--gold));box-shadow:0 0 60px var(--glow);animation:photoGlow 4s infinite}
+.photo-ring img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block}
+@keyframes photoGlow{50%{box-shadow:0 0 90px rgba(167,139,250,.32)}}
+.badge{margin-top:28px;padding:8px 18px;border:1px solid #ffffff18;background:var(--glass);border-radius:50px;color:var(--accent);font-size:.82rem}
+.hero h1{font-family:"Cormorant Garamond",serif;font-size:clamp(3.2rem,10vw,6rem);line-height:.98;margin-top:20px;background:linear-gradient(135deg,var(--accent),var(--accent2),var(--gold));-webkit-background-clip:text;color:transparent}
+.hero-sub{font-family:"Great Vibes",cursive;color:var(--accent2);font-size:clamp(1.5rem,4vw,2.3rem);margin:18px 0 28px}
+.section-title{font-family:"Cormorant Garamond",serif;font-size:clamp(2.3rem,6vw,4rem);margin-bottom:28px;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;color:transparent}
+.message-card{max-width:720px;text-align:left;padding:34px;border:1px solid #ffffff12;background:linear-gradient(145deg,#ffffff0d,#ffffff04);border-radius:24px;backdrop-filter:blur(12px);box-shadow:0 25px 80px #0004;line-height:1.8;color:var(--muted)}
+.message-card p{margin-bottom:18px}.message-card p:first-child{color:var(--text);font-family:"Great Vibes",cursive;font-size:1.8rem}
+.signature{text-align:right;color:var(--accent);font-family:"Great Vibes",cursive;font-size:1.7rem;margin-top:10px}
+.nav-btn{border:1px solid #ffffff20;border-radius:50px;background:var(--glass);color:var(--text);padding:12px 22px;cursor:pointer;transition:.25s;backdrop-filter:blur(10px)}
+.nav-btn:hover,.nav-btn.primary{background:var(--accent);border-color:var(--accent);box-shadow:0 10px 35px var(--glow);transform:translateY(-2px)}
+.section-nav{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap;justify-content:center}
+.cake-area{display:flex;flex-direction:column;align-items:center}
+.cake{font-size:8rem;position:relative;animation:bob 2.5s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-9px)}}
+.flame{position:absolute;top:-8px;left:50%;transform:translateX(-50%);font-size:2rem;filter:drop-shadow(0 0 12px #fbbf24);animation:flicker .5s infinite alternate}
+.cake.blown .flame{opacity:0;transform:translate(-50%,-25px) scale(.3);transition:.5s}
+@keyframes flicker{to{transform:translateX(-50%) scale(1.15)}}
+.cake-area p{color:var(--muted);margin:8px 0 18px}.blow-btn{padding:13px 24px;border:0;border-radius:50px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;cursor:pointer;box-shadow:0 10px 35px var(--glow)}
+.wishes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;width:100%}
+.wish-card{padding:24px 18px;min-height:170px;border:1px solid #ffffff12;background:var(--glass);border-radius:20px;backdrop-filter:blur(10px);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:.3s}
+.wish-card:hover{transform:translateY(-8px);border-color:#f472b644}.wish-icon{font-size:2rem;margin-bottom:12px}.wish-card p{color:var(--muted);line-height:1.6;font-size:.9rem}
+.celebration{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;width:100%;max-width:700px}
+.celebrate-card{height:150px;border-radius:24px;background:linear-gradient(145deg,#ffffff12,#ffffff05);border:1px solid #ffffff14;display:flex;align-items:center;justify-content:center;font-size:5rem;animation:cardFloat 3s ease-in-out infinite}
+.celebrate-card:nth-child(2){animation-delay:.3s}.celebrate-card:nth-child(3){animation-delay:.6s}.celebrate-card:nth-child(4){animation-delay:.9s}
+@keyframes cardFloat{50%{transform:translateY(-10px) rotate(2deg)}}
+.final-message{font-family:"Great Vibes",cursive;font-size:2.2rem;color:var(--accent);margin:30px 0 20px}
+footer{text-align:center;padding:40px 20px 55px;color:#ffffff66;line-height:1.8}footer span{color:var(--accent)}footer small{font-size:.8rem}
+.confetti{position:fixed;z-index:1000;top:-20px;pointer-events:none;animation:fall 3.5s linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:0}}
+@media(max-width:700px){.wishes-grid{grid-template-columns:1fr 1fr}.celebration{grid-template-columns:1fr 1fr}.photo-ring{width:175px;height:175px}.nav-dots{right:9px}.music-toggle{left:10px;top:10px}}
+@media(max-width:450px){.wishes-grid{grid-template-columns:1fr}.message-card{padding:24px}.celebrate-card{height:120px;font-size:4rem}}
